@@ -3,7 +3,8 @@ body {
     /* color: white; */
     font-family: 'Audiowide', 'Montserrat Alternates', sans-serif;
     color: white;
-    font-size: 25px;
+    font-size: 30px;
+
 }
 
 .container {
@@ -12,23 +13,21 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    flex-grow: 0;
 }
 
 .header {
     border-bottom: 1px solid white;
     padding: 0px 50px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     display: flex;
     gap: 20px;
     align-items: center;
-
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
-    color: #caf0f8
+    color: #bde0fe
 }
 
 .icon {
@@ -36,16 +35,35 @@ h1 {
     /* height: 80px; */
 }
 
-.starter,
 .final {
 
     color: #80ed99;
 }
 
+.starter {
+    color: #fee440;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.starter>p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.tip {
+    font-size: 20px;
+    color: #bde0fe;
+}
+
 .buttons {
     display: flex;
     gap: 50px;
-    margin: 20px;
+    margin: 40px 20px;
+    flex-shrink: 2;
 }
 
 .grass {
@@ -66,7 +84,11 @@ button {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: none;
+    border: 5px solid white;
+}
+
+button:hover {
+    border: 5px solid #6096ba;
 }
 
 .scoreboard {
@@ -80,8 +102,10 @@ button {
 
 
 .score {
+
     display: flex;
-    gap: 350px;
+    padding: 0 50px;
+    gap: 300px;
 }
 
 .score>p {
@@ -91,4 +115,31 @@ button {
 
 .final {
     font-size: 40px;
+    display: flex;
+    justify-content: center;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.btnAgain {
+    border-radius: 5px;
+    height: auto;
+    width: 250px;
+    border: 5px solid #fefae0;
+    font-size: 20px;
+    background-color: #80ed99;
+    font-family: 'Audiowide', 'Montserrat Alternates', sans-serif;
+
 }
