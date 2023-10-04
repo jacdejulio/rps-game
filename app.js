@@ -1,3 +1,18 @@
+// ##DECLARING VARIABLES
+const btnGrass = document.querySelector(".grass");
+const btnFire = document.querySelector(".fire");
+const btnWater = document.querySelector(".water");
+const showWin = document.querySelector(".result");
+const final = document.querySelector(".final")
+const score = document.querySelector(".score")
+const p1score = document.querySelector(".p1score");
+const p2score = document.querySelector(".p2score");
+const btnAgain = document.createElement("button");
+btnAgain.className = "btnAgain"
+
+
+let winPlayer = 0;
+let winComp = 0;
 
 // ##GET COMPUTER CHOICE##
 function getComputerChoice() {
@@ -20,22 +35,7 @@ function getComputerChoice() {
     return compChoice
 }
 
-// ##GET PLAYER CHOICE##
-const btnGrass = document.querySelector(".grass");
-const btnFire = document.querySelector(".fire");
-const btnWater = document.querySelector(".water");
-const showWin = document.querySelector(".result");
-const final = document.querySelector(".final")
-const p1score = document.querySelector(".p1score");
-const p2score = document.querySelector(".p2score");
-// element.classList.add("scoreboard")
-
-let winPlayer = 0;
-let winComp = 0;
-
-
 // ##EVENT LISTENER FOR EACH BUTTON
-
 btnGrass.addEventListener("click", function () {
     if (winPlayer < 5 && winComp < 5) {
         btnGrass.value = "grass";
@@ -64,11 +64,10 @@ btnWater.addEventListener("click", function () {
 });
 
 
-
+// ##GAME LOGIC
 // grass beats water
 // fire beats grass
 // water beats fire
-
 
 function playRound(comp, player) {
 
@@ -100,8 +99,7 @@ function playRound(comp, player) {
 
 }
 
-
-
+// ##TO SHOW COMPUTER AND PLAYER SCORES PER TURN
 function updateScore(roundWinner) {
     if (roundWinner === "player") {
         winPlayer++;
@@ -109,6 +107,7 @@ function updateScore(roundWinner) {
         winComp++;
     }
 
+    score.style.backgroundColor = "#3c6e71";
     p1score.textContent = `Player: ${winPlayer}`;
     p2score.textContent = `Computer: ${winComp}`;
 
@@ -118,6 +117,7 @@ function updateScore(roundWinner) {
 
 }
 
+// ##TO DECLARE THE WINNER, WILL ONLY SHOW UP AFTER 5 TURNS
 function endGame() {
 
     let champ = '';
@@ -132,26 +132,23 @@ function endGame() {
 
     final.textContent = champ;
 
+    playAgain();
+}
 
+// ##TO SHOW THE PLAYAGAIN BUTTON AND REFRESH THE PAGE
+function playAgain() {
 
-    // Ask the user if they want to play again
+    btnAgain.textContent = "PLAY AGAIN";
     setTimeout(() => {
-        // Reset the scores to default values
+        showWin.textContent = "";
+        showWin.appendChild(btnAgain);
 
-        // Reset the text content of the score element
+        score.style.display = "none";
+    }, 5000);
 
-        winPlayer = 0;
-        winComp = 0;
-
-        const playAgain = confirm("Do you want to play again?");
-        if (playAgain) {
-            final.textContent = ""; // Clear the final result
-            showWin.textContent = ""; // Clear the last round result
-            p1score.textContent = `Player: ${winPlayer}`;
-            p2score.textContent = `Computer: ${winComp}`;
-
-        }
-    }, 2000);
+    btnAgain.addEventListener("click", () => {
+        window.location.reload();
+    })
 }
 
 

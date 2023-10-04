@@ -1,6 +1,8 @@
 # Rock, Paper, Scissors Game
 
-This project will help enhance JS coding and troubleshooting skills.
+This is a modified version of the classic Rock Paper Scissors game. 
+
+Many thanks to the following for sharing they're art for free. Please check them out!
 
 bulba <a href="https://www.freepik.com/icon/bullbasaur_188989#fromView=search&term=pokemon+icons&page=1&position=4&track=ais&track=ais">Icon by Roundicons Freebies</a>
 
