@@ -4,17 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>DUELMONS</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat+Alternates:wght@500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Choose one of the following:</p>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <div class="result"></div>
-    <div class="score"></div>
+    <div class="container">
+        <div class="header">
+            <h1>DUELMONS</h1>
+            <img src="../img/pokeball.png" alt="rps icon" class="icon">
+        </div>
+
+        <p class="starter">Choose Your Starter!</p>
+
+        <div class="buttons">
+            <button class="grass">
+                <img src="../img/bullbasaur_188989.png" alt="">
+            </button>
+            <button class="fire">
+                <img src="../img/charmander_188990.png" alt="">
+            </button>
+            <button class="water">
+                <img src="../img/squirtle_188988.png" alt="">
+            </button>
+        </div>
+
+        <div class="scoreboard">
+            <div class="result"></div>
+            <div class="score">
+                <p class="p1score"></p>
+                <p class="p2score"></p>
+            </div>
+            <div class="final"></div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+
+    </div>
+    </div>
     <script src="./app.js"></script>
 </body>
 
